@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define parameters for the waves
+A = 1  # Amplitude of the displacement wave
+B = 1  # Amplitude of the pressure fluctuation wave
+k = 2 * np.pi / 10  # Wave number (arbitrary choice)
+
+# Create an array of positions (x values)
+x = np.linspace(0, 20, 400)
+
+# Calculate displacement and pressure fluctuation
+y = A * np.sin(k * x)
+p = B * np.cos(k * x)
+
+# Plotting
+plt.figure(figsize=(12, 6))
+
+plt.plot(x, y, label='Displacement y(x)')
+plt.plot(x, p, label='Pressure fluctuation p(x) at t=0')
+
+plt.title('Displacement and Pressure Fluctuation vs Position')
+plt.xlabel('Position (x)')
+plt.ylabel('Value')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(True)
+plt.legend()
+
+plt.show()
